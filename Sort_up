@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void Swap(int *x, int *y) {
+	int tmp = *x;
+	*x = *y;
+	*y = tmp;
+}
+
+int main() {
+	int arr[10];
+
+	for (int i = 0; i < 10; i++) {
+		printf("숫자를 입력해주세요\n");
+		scanf_s("%d", &arr[i]);
+	}
+
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 9; j++) {
+			if (arr[j] > arr[j + 1]) {
+				Swap(&arr[j], &arr[j + 1]);
+			}
+		}
+	}
+
+	for (int i = 0; i < 10; i++) {
+		printf("%d ", arr[i]);
+	}
+}
